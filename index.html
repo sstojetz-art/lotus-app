@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#050403">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Lotus">
+<title>Lotus Medical</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-180.png">
+<style>
+:root{--gold:#D5B863;--gold2:#F1DC9A;--gold3:#A8873A;--ink:#050403;--sat:env(safe-area-inset-top,0px);--sab:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:var(--ink);color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;overflow:hidden}
+#bg{position:fixed;inset:-4%;background:#05070d url(img/cle.jpg) center 42%/cover no-repeat;animation:kb 38s ease-in-out infinite alternate;filter:saturate(1.05) contrast(1.05)}
+@media (max-width:720px) and (orientation:portrait){#bg{background-image:url(img/cle-tall.jpg);background-position:50% 40%}}
+@keyframes kb{0%{transform:scale(1.04) translate3d(0,0,0)}100%{transform:scale(1.14) translate3d(-2.2%,-1.4%,0)}}
+#tint{position:fixed;inset:0;background:radial-gradient(120% 80% at 50% 38%,rgba(5,4,3,.05),rgba(5,4,3,.55) 60%,rgba(5,4,3,.92)),linear-gradient(180deg,rgba(5,4,3,.55),rgba(5,4,3,.1) 30%,rgba(5,4,3,.35) 62%,rgba(5,4,3,.96))}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
+#art{position:fixed;left:-2%;bottom:3%;width:min(46vw,620px);opacity:.3;pointer-events:none;filter:drop-shadow(0 0 10px rgba(213,184,99,.5))}
+#art path,#art ellipse,#art rect,#art circle,#art line{fill:none;stroke:var(--gold);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:var(--l,900);stroke-dashoffset:var(--l,900);animation:draw 3.6s cubic-bezier(.6,.05,.25,1) forwards}
+#art .hw{stroke:#fff6d8;stroke-width:2.6}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (max-width:720px){#art{width:82vw;left:-14vw;bottom:2%;opacity:.14}}
+#rays{position:fixed;left:50%;top:var(--ry,30%);width:150vmax;height:150vmax;transform:translate(-50%,-50%);background:repeating-conic-gradient(from 0deg,rgba(241,220,154,.07) 0deg 4deg,transparent 4deg 18deg);-webkit-mask:radial-gradient(circle,#000 0,transparent 42%);mask:radial-gradient(circle,#000 0,transparent 42%);animation:spin 90s linear infinite;pointer-events:none;opacity:0;transition:opacity 2s}
+body.ready #rays{opacity:1}
+@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+main{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:calc(var(--sat) + 24px) 22px calc(var(--sab) + 24px);text-align:center}
+#lotus{width:min(150px,30vw);height:auto;overflow:visible;filter:drop-shadow(0 0 22px rgba(213,184,99,.55)) drop-shadow(0 0 2px rgba(255,240,200,.8))}
+#lotus .pt{transform-box:fill-box;transform-origin:50% 100%;opacity:0;transform:scale(.2) rotate(var(--r,0deg));animation:bloom 1.4s cubic-bezier(.2,1.5,.35,1) forwards;animation-delay:var(--d,0s)}
+@keyframes bloom{to{opacity:1;transform:scale(1) rotate(0deg)}}
+#lotus .glint{opacity:0;animation:glint 5.5s ease-in-out 2.2s infinite}
+@keyframes glint{0%,70%,100%{opacity:0;transform:translateX(-140px)}80%{opacity:.85}92%{opacity:0;transform:translateX(160px)}}
+.wm{margin:14px 0 2px;font:600 clamp(26px,5.4vw,46px)/1 "Didot","Bodoni MT","Playfair Display",Georgia,serif;letter-spacing:.32em;padding-left:.32em;color:#F1DC9A;text-shadow:0 0 22px rgba(213,184,99,.55),0 2px 0 rgba(0,0,0,.6);white-space:nowrap}
+.wm span{display:inline-block;animation-fill-mode:forwards;opacity:0;transform:translateY(14px);filter:blur(6px);animation:rise .9s cubic-bezier(.2,1,.3,1) forwards}
+@keyframes rise{to{opacity:1;transform:none;filter:none}}
+.wm.lit span{animation:none;opacity:1;transform:none;filter:none}
+.wm span.sh{color:#fff7dc;text-shadow:0 0 18px #fff3c9,0 0 34px rgba(241,220,154,.9);transition:color .25s,text-shadow .25s}
+main:before{content:"";position:absolute;left:50%;top:50%;width:min(760px,130vw);height:min(620px,110vh);transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(5,4,3,.62),rgba(5,4,3,.35) 55%,transparent);pointer-events:none;z-index:-1}
+@keyframes sheen{to{background-position:-220% 0}}
+.sub{font:500 11px/1.4 -apple-system,Helvetica,Arial,sans-serif;letter-spacing:.42em;padding-left:.42em;color:rgba(241,220,154,.85);text-transform:uppercase;opacity:0;animation:fade 1.2s ease 1.6s forwards}
+.tag{margin:12px 0 0;font:italic 400 clamp(15px,2.4vw,18px)/1.4 Georgia,serif;color:rgba(255,255,255,.86);opacity:0;animation:fade 1.2s ease 2s forwards}
+@keyframes fade{to{opacity:1}}
+.card{margin-top:26px;width:min(400px,100%);padding:20px 20px 16px;border-radius:20px;background:linear-gradient(180deg,rgba(18,14,8,.72),rgba(8,6,4,.82));border:1px solid rgba(213,184,99,.45);box-shadow:0 30px 80px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,240,200,.12);-webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2);opacity:0;transform:translateY(18px);animation:rise 1s cubic-bezier(.2,1,.3,1) 2.3s forwards;position:relative;overflow:hidden}
+.card:before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:conic-gradient(from var(--a,0deg),transparent 0 70%,rgba(241,220,154,.9) 80%,transparent 90%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:orbit 5s linear infinite;pointer-events:none}
+@property --a{syntax:"<angle>";initial-value:0deg;inherits:false}
+@keyframes orbit{to{--a:360deg}}
+.card h2{margin:0 0 4px;font:400 21px/1.2 Georgia,serif;color:#fff}
+.card p.k{margin:0 0 14px;font-size:13px;color:rgba(255,255,255,.62)}
+.fld{position:relative}
+.fld input{width:100%;height:52px;border-radius:14px;border:1px solid rgba(213,184,99,.4);background:rgba(0,0,0,.45);color:#fff;font:500 17px/1 -apple-system,Helvetica,Arial,sans-serif;padding:0 52px 0 16px;outline:none;letter-spacing:.04em;transition:border-color .2s,box-shadow .2s}
+.fld input:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(213,184,99,.16)}
+.fld button{position:absolute;right:6px;top:6px;width:40px;height:40px;border:0;border-radius:10px;background:transparent;color:rgba(241,220,154,.8);cursor:pointer}
+.fld button svg{width:22px;height:22px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:12px 2px 14px;font-size:13.5px;color:rgba(255,255,255,.78)}
+.row label{display:flex;align-items:center;gap:9px;cursor:pointer;user-select:none}
+.row input{width:20px;height:20px;accent-color:var(--gold)}
+.go{width:100%;height:54px;border:0;border-radius:14px;cursor:pointer;font:700 15px/1 -apple-system,Helvetica,Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#120d04;background:linear-gradient(100deg,#B8923F,#F3DFA0 45%,#D5B863 60%,#9e7c2e);background-size:200% 100%;box-shadow:0 10px 30px rgba(213,184,99,.35),inset 0 1px 0 rgba(255,255,255,.5);transition:transform .15s,box-shadow .2s,background-position .6s}
+.go:hover{background-position:100% 0;box-shadow:0 14px 40px rgba(213,184,99,.5)}
+.go:active{transform:scale(.98)}
+.go[disabled]{opacity:.75;cursor:wait}
+.msg{min-height:20px;margin:10px 0 0;font-size:13.5px;color:#ffcf8a}
+.card.shake{animation:shake .5s}
+@keyframes shake{20%,60%{transform:translateX(-10px)}40%,80%{transform:translateX(10px)}}
+.foot{position:fixed;left:0;right:0;bottom:calc(var(--sab) + 12px);font:500 10.5px/1.5 -apple-system,Helvetica,Arial,sans-serif;letter-spacing:.3em;color:rgba(241,220,154,.55);text-transform:uppercase;text-align:center;pointer-events:none;opacity:0;animation:fade 1.5s ease 3s forwards}
+#snd{position:fixed;top:calc(var(--sat) + 12px);right:12px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(213,184,99,.4);background:rgba(0,0,0,.35);color:var(--gold2);cursor:pointer;display:grid;place-items:center;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+#snd svg{width:20px;height:20px}
+#snd.off .on,#snd:not(.off) .off{display:none}
+#veil{position:fixed;inset:0;background:radial-gradient(circle at 50% var(--ry,30%),rgba(255,240,200,.95),rgba(213,184,99,.6) 18%,rgba(5,4,3,1) 60%);opacity:0;pointer-events:none;transition:opacity .9s ease}
+body.go-out #veil{opacity:1}
+body.go-out main{transform:scale(1.06);opacity:0;transition:transform 1s ease,opacity .8s ease}
+body.auto .card{display:none}
+body.auto .tag{animation-delay:.9s}
+#ios{display:none}
+.hint{margin-top:12px;font-size:12.5px;color:rgba(255,255,255,.6);line-height:1.45}
+.hint b{color:var(--gold2);font-weight:600}
+@media (max-height:640px){.tag{display:none}.card{margin-top:16px}}
+@media (prefers-reduced-motion:reduce){#bg,#rays,.wm{animation:none}}
+</style>
+</head>
+<body>
+<div id="bg"></div><div id="tint"></div><div id="rays"></div><canvas id="fx"></canvas>
+
+<svg id="art" viewBox="0 0 640 420" aria-hidden="true">
+ <!-- tibia -->
+ <path d="M236 0 L240 196 C238 222 224 240 220 256 L318 254 C312 238 300 222 298 198 L296 0"/>
+ <!-- fibula -->
+ <path d="M318 0 L322 214 C324 242 334 262 342 272 L356 266 C348 248 340 228 338 204 L334 0"/>
+ <!-- fibular plate and screws -->
+ <rect class="hw" x="330" y="52" width="16" height="170" rx="8"/>
+ <line class="hw" x1="338" y1="72" x2="296" y2="74"/><line class="hw" x1="338" y1="108" x2="300" y2="110"/><line class="hw" x1="338" y1="144" x2="302" y2="146"/><line class="hw" x1="338" y1="180" x2="306" y2="182"/>
+ <!-- talus -->
+ <path d="M218 260 C232 238 306 236 330 256 C342 270 338 288 322 296 L236 298 C218 292 210 274 218 260 Z"/>
+ <!-- calcaneus -->
+ <path d="M290 298 C326 290 382 288 420 300 C444 314 442 348 418 356 L300 356 C276 346 270 314 290 298 Z"/>
+ <!-- navicular, cuboid, cuneiforms -->
+ <ellipse cx="200" cy="286" rx="22" ry="17"/>
+ <path d="M232 312 L284 310 L290 344 L236 348 Z"/>
+ <path d="M166 278 L184 274 L188 304 L168 308 Z"/><path d="M148 290 L166 286 L170 314 L150 318 Z"/>
+ <!-- metatarsals -->
+ <path d="M168 292 C136 300 96 312 62 322"/><path d="M160 306 C128 316 90 330 58 340"/><path d="M196 326 C150 338 104 352 70 360"/>
+ <!-- phalanges -->
+ <path d="M60 322 L34 328 M30 330 L12 334"/><path d="M56 340 L32 346 M28 348 L10 352"/><path d="M68 360 L44 366 M40 368 L22 372"/>
+ <!-- intramedullary nail in the fibula -->
+ <line class="hw" x1="328" y1="20" x2="344" y2="262"/>
+</svg>
+
+<main>
+ <svg id="lotus" viewBox="0 0 584 380" aria-label="Lotus Medical">
+  <defs>
+   <linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBEBB8"/><stop offset=".55" stop-color="#D5B863"/><stop offset="1" stop-color="#8F6E27"/></linearGradient>
+   <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4E1A4"/><stop offset="1" stop-color="#A98838"/></linearGradient>
+   <linearGradient id="sh" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+   <clipPath id="cp"><path d="M292 4 C352 96 352 262 292 354 C232 262 232 96 292 4Z M302 352 C330 248 382 140 442 92 C452 200 404 300 302 352Z M282 352 C254 248 202 140 142 92 C132 200 180 300 282 352Z M310 354 C382 272 482 230 582 226 C540 302 430 350 310 354Z M274 354 C202 272 102 230 2 226 C44 302 154 350 274 354Z"/></clipPath>
+  </defs>
+  <g>
+   <path class="pt" style="--d:.9s;--r:30deg" fill="url(#g2)" d="M274 354 C202 272 102 230 2 226 C44 302 154 350 274 354Z"/>
+   <path class="pt" style="--d:.9s;--r:-30deg" fill="url(#g2)" d="M310 354 C382 272 482 230 582 226 C540 302 430 350 310 354Z"/>
+   <path class="pt" style="--d:.6s;--r:20deg" fill="url(#g)" d="M282 352 C254 248 202 140 142 92 C132 200 180 300 282 352Z"/>
+   <path class="pt" style="--d:.6s;--r:-20deg" fill="url(#g)" d="M302 352 C330 248 382 140 442 92 C452 200 404 300 302 352Z"/>
+   <path class="pt" style="--d:.3s" fill="url(#g)" d="M292 4 C352 96 352 262 292 354 C232 262 232 96 292 4Z"/>
+  </g>
+  <g clip-path="url(#cp)"><rect class="glint" x="200" y="0" width="70" height="380" fill="url(#sh)" transform="skewX(-18)"/></g>
+ </svg>
+ <div class="wm" id="wm" aria-label="Lotus Medical"></div>
+ <div class="sub">Northeast Ohio &middot; Foot &amp; Ankle &middot; Biologics</div>
+ <p class="tag">Healing Sooner. Wellness Longer.</p>
+
+ <form class="card" id="card" autocomplete="on">
+  <h2 id="hello">Welcome back</h2>
+  <p class="k">Your private Lotus Control Center.</p>
+  <input type="text" name="username" autocomplete="username" value="lotus" hidden>
+  <div class="fld"><input id="pw" type="password" name="password" autocomplete="current-password" placeholder="Password" aria-label="Password" required><button type="button" id="eye" aria-label="Show password"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+  <div class="row"><label><input type="checkbox" id="keep" checked> Keep me signed in on this device</label></div>
+  <button class="go" id="go" type="submit">Open</button>
+  <div class="msg" id="msg" role="status"></div>
+  <div class="hint" id="ios">On iPhone or iPad: tap <b>Share</b>, then <b>Add to Home Screen</b> to keep Lotus as an app.</div>
+ </form>
+</main>
+<button id="snd" type="button" aria-label="Sound on or off"><svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16 9a4 4 0 010 6M18.5 6.5a8 8 0 010 11"/></svg><svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M17 9l5 6M22 9l-5 6"/></svg></button>
+<div class="foot">Integrity First &middot; Patient First &middot; Always</div>
+<div id="veil"></div>
+
+<script>
+(function(){
+'use strict';
+var $=function(i){return document.getElementById(i)};
+/* ---------- wordmark ---------- */
+'LOTUS MEDICAL'.split('').forEach(function(ch,i){var s=document.createElement('span');s.textContent=ch===' '?' ':ch;s.style.animationDelay=(1.1+i*.06)+'s';$('wm').appendChild(s)});
+requestAnimationFrame(function(){document.body.classList.add('ready')});
+setTimeout(function(){var sp=[].slice.call(document.querySelectorAll('#wm span'));$('wm').classList.add('lit');(function sweep(){sp.forEach(function(x,i){setTimeout(function(){x.classList.add('sh');setTimeout(function(){x.classList.remove('sh')},260)},i*55)});setTimeout(sweep,6500)})()},2400);
+function lotusY(){var r=$('lotus').getBoundingClientRect();document.documentElement.style.setProperty('--ry',(r.top+r.height*.6)+'px')}
+lotusY();addEventListener('resize',lotusY);
+/* art: set dash lengths, stagger */
+[].forEach.call(document.querySelectorAll('#art *'),function(el,i){try{var L=Math.ceil(el.getTotalLength?el.getTotalLength():400)+4;el.style.setProperty('--l',L);el.style.animationDelay=(.4+i*.12)+'s'}catch(e){}});
+
+/* ---------- sound ---------- */
+var AC=null,muted=false;try{muted=localStorage.getItem('lotus-mute')==='1'}catch(e){}
+$('snd').classList.toggle('off',muted);
+function ac(){if(muted)return null;if(!AC){try{AC=new(window.AudioContext||window.webkitAudioContext)()}catch(e){return null}}if(AC.state==='suspended')AC.resume();return AC}
+function tone(f,d,v,type,delay,f2){var a=ac();if(!a)return;var t=a.currentTime+(delay||0),o=a.createOscillator(),g=a.createGain();o.type=type||'sine';o.frequency.setValueAtTime(f,t);if(f2)o.frequency.exponentialRampToValueAtTime(f2,t+d);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.015);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(a.destination);o.start(t);o.stop(t+d+.05)}
+function noise(d,v,fq,delay){var a=ac();if(!a)return;var t=a.currentTime+(delay||0),n=a.sampleRate*d,b=a.createBuffer(1,n,a.sampleRate),c=b.getChannelData(0);for(var i=0;i<n;i++)c[i]=(Math.random()*2-1)*Math.pow(1-i/n,2);var s=a.createBufferSource(),f=a.createBiquadFilter(),g=a.createGain();s.buffer=b;f.type='bandpass';f.frequency.setValueAtTime(fq||800,t);f.frequency.exponentialRampToValueAtTime((fq||800)*4,t+d);g.gain.value=v;s.connect(f);f.connect(g);g.connect(a.destination);s.start(t)}
+function chimeOpen(){[523.25,659.25,783.99,987.77,1318.5].forEach(function(f,i){tone(f,2.4,.05,'sine',i*.07);tone(f*2,1.2,.012,'triangle',i*.07+.02)});tone(130.8,2.6,.08,'sine');noise(1.1,.08,600,0)}
+function tick(){tone(1800+Math.random()*300,.04,.012,'triangle')}
+function thud(){tone(140,.35,.12,'sine',0,70);tone(92,.4,.08,'triangle',.05)}
+$('snd').onclick=function(){muted=!muted;try{localStorage.setItem('lotus-mute',muted?'1':'0')}catch(e){}this.classList.toggle('off',muted);if(!muted){ac();tone(880,.25,.04);tone(1320,.3,.03,'sine',.08)}};
+$('pw').addEventListener('keydown',function(e){if(e.key.length===1)tick()});
+$('pw').addEventListener('focus',function(){ac()},{once:true});
+$('eye').onclick=function(){var p=$('pw');p.type=p.type==='password'?'text':'password';p.focus()};
+
+/* ---------- particles: gold embers rising, lake shimmer ---------- */
+var cv=$('fx'),cx=cv.getContext('2d'),W=0,H=0,DPR=Math.min(2,devicePixelRatio||1),P=[],S=[];
+function size(){W=innerWidth;H=innerHeight;cv.width=W*DPR;cv.height=H*DPR;cx.setTransform(DPR,0,0,DPR,0,0);S=[];for(var i=0;i<Math.round(W/9);i++)S.push({x:Math.random()*W,y:H*(.62+Math.random()*.36),w:4+Math.random()*26,p:Math.random()*6.28,s:.6+Math.random()*1.8})}
+size();addEventListener('resize',size);
+for(var i=0;i<70;i++)P.push(ember(true));
+function ember(init){return{x:Math.random()*W,y:init?Math.random()*H:H+10,r:.6+Math.random()*2.2,v:12+Math.random()*34,dx:(Math.random()-.5)*12,a:.25+Math.random()*.6,ph:Math.random()*6.28}}
+var burst=[],last=performance.now();
+function frame(t){var dt=Math.min(.05,(t-last)/1000);last=t;cx.clearRect(0,0,W,H);
+ cx.globalCompositeOperation='lighter';
+ S.forEach(function(s){var a=.06+.08*Math.max(0,Math.sin(t/1000*s.s+s.p));cx.fillStyle='rgba(241,215,140,'+a.toFixed(3)+')';cx.fillRect(s.x+Math.sin(t/1400+s.p)*6,s.y,s.w,1.4)});
+ P.forEach(function(p,i){p.y-=p.v*dt;p.x+=Math.sin(t/900+p.ph)*.3+p.dx*dt;if(p.y<-10)P[i]=ember();var g=cx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*4);g.addColorStop(0,'rgba(255,236,180,'+p.a+')');g.addColorStop(1,'rgba(213,184,99,0)');cx.fillStyle=g;cx.beginPath();cx.arc(p.x,p.y,p.r*4,0,6.283);cx.fill()});
+ burst=burst.filter(function(b){b.x+=b.vx*dt;b.y+=b.vy*dt;b.vy+=60*dt;b.l-=dt;var a=Math.max(0,b.l);cx.fillStyle='rgba(255,236,180,'+a.toFixed(3)+')';cx.beginPath();cx.arc(b.x,b.y,b.r,0,6.283);cx.fill();return b.l>0});
+ cx.globalCompositeOperation='source-over';requestAnimationFrame(frame)}
+requestAnimationFrame(frame);
+function goldBurst(){var r=$('lotus').getBoundingClientRect(),x=r.left+r.width/2,y=r.top+r.height*.55;for(var i=0;i<140;i++){var a=Math.random()*6.283,s=80+Math.random()*420;burst.push({x:x,y:y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-120,r:.8+Math.random()*2.6,l:.8+Math.random()*1.2})}}
+
+/* ---------- the vault ---------- */
+var IDX=null;
+function b64(s){var b=atob(s),u=new Uint8Array(b.length);for(var i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return u}
+function idb(){return new Promise(function(res,rej){var q=indexedDB.open('lotus-app',1);q.onupgradeneeded=function(){q.result.createObjectStore('k')};q.onsuccess=function(){res(q.result)};q.onerror=function(){rej(q.error)}})}
+function kget(){return idb().then(function(d){return new Promise(function(res){var r=d.transaction('k').objectStore('k').get('me');r.onsuccess=function(){res(r.result||null)};r.onerror=function(){res(null)}})}).catch(function(){return null})}
+function kput(v){return idb().then(function(d){return new Promise(function(res){var tx=d.transaction('k','readwrite');tx.objectStore('k').put(v,'me');tx.oncomplete=res;tx.onerror=res})}).catch(function(){})}
+function index(){return fetch('vault/index.json',{cache:'no-store'}).catch(function(){return caches.match('vault/index.json')}).then(function(r){if(!r)throw new Error('offline');return r.json()})}
+function derive(pw,salt,iter){var enc=new TextEncoder();return crypto.subtle.importKey('raw',enc.encode(pw),'PBKDF2',false,['deriveKey']).then(function(k){return crypto.subtle.deriveKey({name:'PBKDF2',salt:b64(salt),iterations:iter,hash:'SHA-256'},k,{name:'AES-GCM',length:256},false,['decrypt'])})}
+function fetchVault(f,v){return fetch('vault/'+f+'?v='+v,{cache:'no-cache'}).catch(function(){return caches.match('vault/'+f+'?v='+v)}).then(function(r){if(!r||!r.ok)throw new Error('vault');return r.arrayBuffer()})}
+function open(key,buf){var u=new Uint8Array(buf),iv=u.slice(0,12),ct=u.slice(12);return crypto.subtle.decrypt({name:'AES-GCM',iv:iv},key,ct).then(function(pt){
+  if(typeof DecompressionStream==='undefined')return new TextDecoder().decode(pt);
+  var ds=new Response(new Blob([pt]).stream().pipeThrough(new DecompressionStream('gzip')));return ds.text()})}
+function launch(html,who){
+  try{sessionStorage.setItem('lotus-who',who)}catch(e){}
+  chimeOpen();goldBurst();document.body.classList.add('go-out');
+  setTimeout(function(){document.open();document.write(html);document.close()},1150)}
+function fail(t){var c=$('card');$('msg').textContent=t;c.classList.remove('shake');void c.offsetWidth;c.classList.add('shake');thud();$('go').disabled=false;$('go').textContent='Open'}
+
+$('card').addEventListener('submit',function(e){e.preventDefault();var pw=$('pw').value;if(!pw)return;ac();
+  $('go').disabled=true;$('go').textContent='Opening…';$('msg').textContent='';tone(392,.5,.04);tone(587,.6,.03,'sine',.08);
+  (IDX?Promise.resolve(IDX):index()).then(function(ix){IDX=ix;var list=ix.users.slice();
+    function next(){var u=list.shift();if(!u)return fail('That password didn’t open it. Check caps lock and try again.');
+      return derive(pw,u.salt,ix.iter).then(function(key){return fetchVault(u.f,ix.v).then(function(buf){return open(key,buf)}).then(function(html){
+        var keep=$('keep').checked;return(keep?kput({u:u.id,key:key}):Promise.resolve()).then(function(){launch(html,u.id)})},function(){return next()})})}
+    return next()}).catch(function(){fail('No connection. Connect to the internet once to sign in.')})});
+
+/* ---------- remembered device: straight in, with the bloom ---------- */
+kget().then(function(k){if(!k||!k.key)return;document.body.classList.add('auto');
+  index().then(function(ix){IDX=ix;var u=ix.users.filter(function(x){return x.id===k.u})[0];if(!u)throw 0;return fetchVault(u.f,ix.v).then(function(b){return open(k.key,b)}).then(function(html){setTimeout(function(){launch(html,u.id)},2300)})})
+  .catch(function(){document.body.classList.remove('auto')})});
+
+/* ---------- install hints ---------- */
+var ios=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1),standalone=matchMedia('(display-mode: standalone)').matches||navigator.standalone;
+if(ios&&!standalone)$('ios').style.display='block';
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(function(){});
+})();
+</script>
+</body>
+</html>
