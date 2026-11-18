@@ -205,7 +205,9 @@ function open(key,buf){var u=new Uint8Array(buf),iv=u.slice(0,12),ct=u.slice(12)
 function launch(html,who){
   try{sessionStorage.setItem('lotus-who',who)}catch(e){}
   chimeOpen();goldBurst();document.body.classList.add('go-out');
-  setTimeout(function(){document.open();document.write(html);document.close()},1150)}
+  /* the board paints on black and fades in: no white flash while it loads */
+  var pre='<!doctype html><html style="background:#050403"><head><meta name="color-scheme" content="dark"><meta name="theme-color" content="#050403"><style>html{background:#050403}body{animation:lxDis .9s ease .05s both}@keyframes lxDis{from{opacity:0}to{opacity:1}}</style>';
+  setTimeout(function(){document.open();document.write(pre+html);document.close()},850)}
 function fail(t){var c=$('card');$('msg').textContent=t;c.classList.remove('shake');void c.offsetWidth;c.classList.add('shake');thud();$('go').disabled=false;$('go').textContent='Open'}
 
 $('card').addEventListener('submit',function(e){e.preventDefault();var pw=$('pw').value;if(!pw)return;ac();
@@ -218,7 +220,7 @@ $('card').addEventListener('submit',function(e){e.preventDefault();var pw=$('pw'
 
 /* ---------- remembered device: straight in, with the bloom ---------- */
 kget().then(function(k){if(!k||!k.key)return;document.body.classList.add('auto');
-  index().then(function(ix){IDX=ix;var u=ix.users.filter(function(x){return x.id===k.u})[0];if(!u)throw 0;return fetchVault(u.f,ix.v).then(function(b){return open(k.key,b)}).then(function(html){setTimeout(function(){launch(html,u.id)},2300)})})
+  index().then(function(ix){IDX=ix;var u=ix.users.filter(function(x){return x.id===k.u})[0];if(!u)throw 0;return fetchVault(u.f,ix.v).then(function(b){return open(k.key,b)}).then(function(html){setTimeout(function(){launch(html,u.id)},Math.max(300,1900-performance.now()))})})
   .catch(function(){document.body.classList.remove('auto')})});
 
 /* ---------- install hints ---------- */
