@@ -154,7 +154,7 @@ var $=function(i){return document.getElementById(i)};
 /* ---------- wordmark ---------- */
 'LOTUS MEDICAL'.split('').forEach(function(ch,i){var s=document.createElement('span');s.textContent=ch===' '?' ':ch;s.style.animationDelay=(1.1+i*.06)+'s';$('wm').appendChild(s)});
 requestAnimationFrame(function(){document.body.classList.add('ready')});
-setTimeout(function(){var sp=[].slice.call(document.querySelectorAll('#wm span'));$('wm').classList.add('lit');(function sweep(){sp.forEach(function(x,i){setTimeout(function(){x.classList.add('sh');setTimeout(function(){x.classList.remove('sh')},260)},i*55)});setTimeout(sweep,6500)})()},2400);
+setTimeout(function(){var sp=[].slice.call(document.querySelectorAll('#wm span'));if(!$('wm'))return;$('wm').classList.add('lit');(function sweep(){if(!document.getElementById('wm'))return;sp.forEach(function(x,i){setTimeout(function(){x.classList.add('sh');setTimeout(function(){x.classList.remove('sh')},260)},i*55)});setTimeout(sweep,6500)})()},2400);
 function lotusY(){var r=$('lotus').getBoundingClientRect();document.documentElement.style.setProperty('--ry',(r.top+r.height*.6)+'px')}
 lotusY();addEventListener('resize',lotusY);
 /* art: set dash lengths, stagger */
